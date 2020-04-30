@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>Игра "Борьба за жизнь" - Курсовая работа</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <script type="text/javascript" src="lib/jquery-2.2.4.min.js"></script>
+        <script type="text/javascript" src="js/strlife.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <div id="condition">
+                <h2>Правила игры:</h2>
+                <p>Два игрока имеют по N шашек и играют в поле MxM клеток, делая ходы по очереди.</p>
+                <p>Возможные ходы:</p>
+                <p>1) переставить свою шашку на соседние свободные клетки</p>
+                <p>2) переставить свою шашку через поле, если оно занято другой шашкой.</p>
+                <p>Если шашка с трёх сторон окружена шашками противника, она снимается с поля. Если пустая клетка с 3-х сторон окружена шашками одного игрока, на её место ставится новая шашка этого игрока. Цель игры – убрать с доски все шашки противника.</p>
+            </div>
+            <div id="input">
+                <h2>Входные параметры</h2>
+                <p><label>Размер игрового поля (M): <input id="sizeBoard" type="number" value="6"></label></p>
+                <p><label>Число шашек у каждого из игроков (N): <input id="countCheckers" type="number" value="3"></label></p>
+            </div>
+            <div id="output">
+                <h2>Выходные параметры</h2>
+                <p id="message" class="center message"></p>
+                <div class="chess"></div>
+            </div>
+        </div>
+    </body>
+</html>

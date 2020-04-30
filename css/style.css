@@ -1,0 +1,256 @@
+@font-face {
+    font-family: 'Roboto';
+    src: url('fonts/roboto/Roboto.woff2') format('woff2'), url('fonts/roboto/Roboto.woff') format('woff'), url('fonts/roboto/Roboto.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Roboto';
+}
+
+h2 {
+    font-size: 2em;
+    background-color: #3399cc;
+    color: #ffffff;
+    text-align: center;
+    padding: 5px 8px;
+}
+
+p {
+    font-size: 1.6em;
+    margin: 5px;
+}
+
+input {
+    font-size: 1em;
+}
+
+label {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+label > input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 4px 2px;
+    text-align: center;
+    outline: 0;
+}
+
+#condition p {
+    text-align: justify;
+}
+
+#output {
+    border-bottom: 1px solid #3399cc;
+}
+
+.center {
+    text-align: center;
+}
+
+.message {
+    margin-top: 25px;
+    font-size: 1.8em;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 800px;
+    width: calc(100% - 20px);
+    border-left: 1px solid #3399cc;
+    border-right: 1px solid #3399cc;
+}
+
+.chess {
+    font-size: 1.6em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 40px;
+}
+
+.chess__wrapper {
+    position: relative;
+    border: 3px solid #7c6249;
+}
+
+.chess__signs-numbers, .chess__signs-chars {
+    position: absolute;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.chess__signs-numbers {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+    top: 0;
+    bottom: 0;
+}
+
+.chess__signs-numbers--left {
+    left: -25px;
+}
+
+.chess__signs-numbers--right {
+    right: -25px;
+}
+
+.chess__signs-chars {
+    left: 0;
+    right: 0;
+}
+
+.chess__signs-chars--top {
+    top: -30px;
+}
+
+.chess__signs-chars--bottom {
+    bottom: -30px;
+}
+
+.chess__board-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.chess__board-element {
+    background-color: #7c6249;
+}
+
+.chess__board-row:nth-of-type(2n) .chess__board-element:nth-of-type(2n),
+.chess__board-row:nth-of-type(2n+1) .chess__board-element:nth-of-type(2n+1) {
+    background-color: #e7cfa9;
+}
+
+.chess__board-element {
+    width: 100%;
+}
+
+.chess__board-element-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-top: 100%;
+    border: 2px solid transparent;
+}
+
+.chess__board-element-wrapper.checker {
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin: 8% auto;
+    padding-top: 84%;
+    width: 84%;
+    height: 84%;
+}
+
+.chess__board-element-wrapper.checker::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.chess__board-element-wrapper.road {
+    cursor: pointer;
+    border: 2px solid #ffffff;
+    box-sizing: border-box;
+    border-radius: 50%;
+    width: 84%;
+    margin: 8% auto;
+    padding-top: 84%;
+    height: 84%;
+}
+
+.chess__board-element-wrapper.road:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.chess__board-element-wrapper.checker.white_checker {
+    background: radial-gradient(circle closest-side, #d6d7cf 20%, #f0f0f0 100%);
+    border: 2px solid #000000;
+}
+
+.chess__board-element-wrapper.checker.black_checker {
+    background: radial-gradient(circle closest-side, #555555 1%, #333333 70%);
+    border: 2px solid #ffffff;
+}
+
+.chess__board-element-wrapper.checker.white_checker:not(.selected):hover {
+    background: radial-gradient(circle closest-side, #d6d7cf 20%, #f0f0f0 80%);
+}
+
+.chess__board-element-wrapper.checker.black_checker:not(.selected):hover{
+    background: radial-gradient(circle closest-side, #555555 1%, #333333 50%);
+}
+
+.chess__board-element-wrapper.checker.white_checker.selected,
+.chess__board-element-wrapper.checker.black_checker.selected {
+    border: 2px solid #cc0000;
+}
+
+@media only screen and (max-width: 720px) {
+    .chess {
+        font-size: 1.4em;
+        padding: 30px;
+    }
+
+    .chess__signs-numbers--left {
+        left: -22px;
+    }
+
+    .chess__signs-numbers--right {
+        right: -22px;
+    }
+
+    .chess__signs-chars--top {
+        top: -25px;
+    }
+
+    .chess__signs-chars--bottom {
+        bottom: -25px;
+    }
+}
+@media only screen and (max-width: 480px) {
+    .chess {
+        font-size: 1.2em;
+        padding: 20px;
+    }
+
+    .chess__signs-numbers--left {
+        left: -16px;
+    }
+
+    .chess__signs-numbers--right {
+        right: -16px;
+    }
+
+    .chess__signs-chars--top {
+        top: -20px;
+    }
+
+    .chess__signs-chars--bottom {
+        bottom: -20px;
+    }
+}
